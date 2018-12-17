@@ -22,3 +22,50 @@ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono
 ```
 Update here
 ```
+
+## Install supervisor
+```
+sudo apt install supervisor -y
+```
+
+## Create bitcoind supervisor
+```
+sudo nano /etc/supervisor/conf.d/bitcoind.conf
+```
+
+## bitcoind.conf supervisor content
+```
+[program:bitcoind]
+command=/usr/bin/bitcoind -maxconnections=500 -conf=/home/michaelphan/.bitcoin/bitcoind.conf -datadir=/home/michaelphan/.bitcoin/
+user=michaelphan
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/bitcoind.err.log
+stdout_logfile=/var/log/bitcoind.out.log
+```
+
+## update new bitcoind supervisor config file
+```
+sudo supervisorctl reread;sudo supervisorctl update; sudo supervisorctl restart all
+```
+
+## Install zmq lib
+```
+pip3 install zmq
+```
+
+## Create zmq_sub.py
+```
+nano /home/michaelphan/.bitcoin/zmq_sub.py
+```
+
+## Create zmq supervisor
+```
+[program:zmq]
+command=python3 /home/michaelphan/.bitcoin/zmq_sub.py
+user=michaelphan
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/zmq.err.log
+stdout_logfile=/var/log/zmq.out.log
+```
