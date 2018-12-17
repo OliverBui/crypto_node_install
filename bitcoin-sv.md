@@ -18,4 +18,4 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config l
 sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev software-properties-common python3-pip
 ```
 
-## install bitcoin-
+## install bitcoin-sv
