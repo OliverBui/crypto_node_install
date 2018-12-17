@@ -23,6 +23,23 @@ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono
 Update here
 ```
 
+## Create bitcoind.conf content
+```
+nano bitcoind.conf
+rpcuser=bitcoinsv //Add rpc user here
+rpcpassword=bitcoinsv_testnetbitcoinsv_testnet //Add rpc pass here
+testnet=1
+rpcport=8332
+rpcallowip=0.0.0.0/0
+server=1
+
+# this is for zmq notification
+zmqpubrawtx=tcp://127.0.0.1:28332
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubhashtx=tcp://127.0.0.1:28332
+zmqpubhashblock=tcp://127.0.0.1:28332
+```
+
 ## Install supervisor
 ```
 sudo apt install supervisor -y
@@ -33,18 +50,18 @@ sudo apt install supervisor -y
 sudo nano /etc/supervisor/conf.d/bitcoind.conf
 ```
 
-## bitcoind.conf supervisor content
+## Create bitcoind.conf supervisor content
 ```
 [program:bitcoind]
-command=/usr/bin/bitcoind -maxconnections=500 -conf=/home/michaelphan/.bitcoin/bitcoind.conf -datadir=/home/michaelphan/.bitcoin/
-user=michaelphan
+command=/usr/bin/bitcoind -maxconnections=500 -conf=/home/ubuntu/bitcoind.conf -datadir=/home/ubuntu/data/
+user=ubuntu
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/bitcoind.err.log
 stdout_logfile=/var/log/bitcoind.out.log
 ```
 
-## update new bitcoind supervisor config file
+## Update new bitcoind supervisor config file
 ```
 sudo supervisorctl reread;sudo supervisorctl update; sudo supervisorctl restart all
 ```
@@ -62,8 +79,8 @@ nano /home/michaelphan/.bitcoin/zmq_sub.py
 ## Create zmq supervisor
 ```
 [program:zmq]
-command=python3 /home/michaelphan/.bitcoin/zmq_sub.py
-user=michaelphan
+command=python3 /home/ubuntu/zmq_sub.py
+user=ubuntu
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/zmq.err.log
