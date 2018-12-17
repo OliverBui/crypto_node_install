@@ -21,15 +21,17 @@ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono
 ## Install bitcoin-sv
 ```
 wget wget https://github.com/bitcoin-sv/bitcoin-sv/releases/download/v0.1.0/bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz
-sudo tar -xvf bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz bitcoin-sv
+tar -xvf bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz
+mv bitcoin-sv-0.1.0 bitcoin-sv
 sudo cp /home/ubuntu/bitcoin-sv/bin/* /usr/bin/
+mkdir /home/ubuntu/data
 ```
 
 ## Create bitcoind.conf content
 ```
 nano bitcoind.conf
-rpcuser=bitcoinsv //Add rpc user here
-rpcpassword=bitcoinsv_testnetbitcoinsv_testnet //Add rpc pass here
+rpcuser=coinhe_bitcoinsv_v1 //Add rpc user here
+rpcpassword=bitcoinsv //Add rpc pass here
 testnet=1
 rpcport=8332
 rpcallowip=0.0.0.0/0
@@ -62,12 +64,6 @@ autorestart=true
 stderr_logfile=/var/log/bitcoind.err.log
 stdout_logfile=/var/log/bitcoind.out.log
 ```
-
-## Update new bitcoind supervisor config file
-```
-sudo supervisorctl reread;sudo supervisorctl update; sudo supervisorctl restart all
-```
-
 ## Install zmq lib
 ```
 pip3 install zmq
@@ -88,4 +84,73 @@ autostart=true
 autorestart=true
 stderr_logfile=/var/log/zmq.err.log
 stdout_logfile=/var/log/zmq.out.log
+```
+
+## Update new bitcoind supervisor config file
+```
+sudo supervisorctl reread;sudo supervisorctl update; sudo supervisorctl restart all
+```
+
+## Check result
+bitcoin-cli -rpcpassword=bitcoinsv -rpcuser=coinhe_bitcoinsv_v1 getnetworkinfo
+```{
+  "version": 100010000,
+  "subversion": "/Bitcoin SV:0.1.0(EB128.0)/",
+  "protocolversion": 70015,
+  "localservices": "0000000000000025",
+  "localrelay": true,
+  "timeoffset": 0,
+  "networkactive": true,
+  "connections": 5,
+  "networks": [
+    {
+      "name": "ipv4",
+      "limited": false,
+      "reachable": true,
+      "proxy": "",
+      "proxy_randomize_credentials": false
+    },
+    {
+      "name": "ipv6",
+      "limited": false,
+      "reachable": true,
+      "proxy": "",
+      "proxy_randomize_credentials": false
+    },
+    {
+      "name": "onion",
+      "limited": true,
+      "reachable": false,
+      "proxy": "",
+      "proxy_randomize_credentials": false
+    }
+  ],
+  "relayfee": 0.00001000,
+  "excessutxocharge": 0.00000000,
+  "localaddresses": [
+  ],
+  "warnings": ""
+}
+```
+
+bitcoin-cli -rpcpassword=bitcoinsv -rpcuser=coinhe_bitcoinsv_v1 getinfo
+```{
+  "version": 100010000,
+  "protocolversion": 70015,
+  "walletversion": 160300,
+  "balance": 0.00000000,
+  "blocks": 168894,
+  "timeoffset": 0,
+  "connections": 6,
+  "proxy": "",
+  "difficulty": 1376302.26788638,
+  "testnet": false,
+  "keypoololdest": 1545043857,
+  "keypoolsize": 2000,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00001000,
+  "errors": "",
+  "maxblocksize": 128000000,
+  "maxminedblocksize": 32000000
+}
 ```
