@@ -73,7 +73,7 @@ pip3 install zmq
 
 ## Create zmq_sub.py
 ```
-nano /home/michaelphan/.bitcoin/zmq_sub.py
+nano /home/ubuntu/zmq_sub.py
 ```
 
 ## Create zmq supervisor
