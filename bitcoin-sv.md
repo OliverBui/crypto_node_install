@@ -20,7 +20,9 @@ sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono
 
 ## Install bitcoin-sv
 ```
-Update here
+wget wget https://github.com/bitcoin-sv/bitcoin-sv/releases/download/v0.1.0/bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz
+sudo tar -xvf bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz bitcoin-sv
+sudo cp /home/ubuntu/bitcoin-sv/bin/* /usr/bin/
 ```
 
 ## Create bitcoind.conf content
