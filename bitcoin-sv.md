@@ -1,7 +1,7 @@
 ## Instance Specs
 ```
 OS: Ubuntu 18-04 LTS
-Disk size: 50Gb
+Disk size: 200Gb
 RAM: 8Gb
 CPU: 2Cores
 ```
