@@ -1,5 +1,6 @@
 ## Check disk volume
 lsblk
+
 df -h
 
 ## Extend disk volume
