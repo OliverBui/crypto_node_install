@@ -25,6 +25,7 @@ tar -xvf bitcoin-sv-0.1.0-x86_64-linux-gnu.tar.gz
 mv bitcoin-sv-0.1.0 bitcoin-sv
 sudo cp /home/ubuntu/bitcoin-sv/bin/* /usr/bin/
 mkdir /home/ubuntu/data
+
 (Note: check latest version on https://github.com/bitcoin-sv/bitcoin-sv/releases)
 ```
 
@@ -70,7 +71,7 @@ stdout_logfile=/var/log/bitcoind.out.log
 pip3 install zmq
 ```
 
-## Create zmq_sub.py
+## Create bsv_zmq_sub.py
 ```
 nano /home/ubuntu/bsv_zmq_sub.py
 (Copy from /zmq/bsv_zmq_sub.py)
