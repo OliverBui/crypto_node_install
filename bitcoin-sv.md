@@ -71,7 +71,7 @@ pip3 install zmq
 
 ## Create zmq_sub.py
 ```
-nano /home/ubuntu/zmq_sub.py
+nano /home/ubuntu/bsv_zmq_sub.py
 (Copy from /zmq/bitcoin-sv.md)
 ```
 
