@@ -34,7 +34,7 @@ mkdir /home/ubuntu/data
 nano bitcoind.conf
 rpcuser=coinhe_bitcoinsv_v1 //Add rpc user here
 rpcpassword=bitcoinsv //Add rpc pass here
-testnet=1
+testnet=0
 rpcport=8332
 rpcallowip=0.0.0.0/0
 server=1
