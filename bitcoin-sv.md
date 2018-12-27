@@ -32,8 +32,8 @@ mkdir /home/ubuntu/data
 ## Create bitcoind.conf content
 ```
 nano bitcoind.conf
-rpcuser=coinhe_bitcoinsv_v1 //Add rpc user here
-rpcpassword=bitcoinsv //Add rpc pass here
+rpcuser=coinhe_bitcoinsv_v1
+rpcpassword=bitcoinsv
 testnet=0
 rpcport=8332
 rpcallowip=0.0.0.0/0
