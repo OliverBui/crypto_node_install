@@ -79,7 +79,7 @@ nano /home/ubuntu/bsv_zmq_sub.py
 
 ## Create zmq supervisor
 ```
-sudo nano /etc/supervisor/conf.d/bitcoind.conf
+sudo nano /etc/supervisor/conf.d/zmq.conf
 ```
 
 ## Create zmq supervisor content
