@@ -85,7 +85,7 @@ sudo nano /etc/supervisor/conf.d/zmq.conf
 ## Create zmq supervisor content
 ```
 [program:zmq]
-command=python3 /home/ubuntu/zmq_sub.py
+command=python3 /home/ubuntu/bsv_zmq_sub.py
 user=ubuntu
 autostart=true
 autorestart=true
