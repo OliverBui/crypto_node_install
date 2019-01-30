@@ -6,3 +6,6 @@ df -h
 growpart /dev/name_disk 1
 ## Resize disk volume
 resize2fs /dev/name_disk
+
+## Reboot
+reboot
