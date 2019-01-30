@@ -3,7 +3,7 @@ lsblk
 df -h
 
 ## Extend disk volume
-growpart /dev/xvda1
+growpart /dev/xvda 1
 
 ## Resize disk volume
-resize2fs /dev/xvda1
+resize2fs /dev/xvda 1
