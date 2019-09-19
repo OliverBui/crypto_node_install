@@ -11,20 +11,20 @@ Offical Docs: https://xrpl.org/install-rippled-on-ubuntu.html#main_content_body
 
 ## 1: install utils + update system
 ```
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt -y install apt-transport-https ca-certificates wget gnupg
+$ sudo apt-get update -y
+$ sudo apt-get upgrade -y
+$ sudo apt -y install apt-transport-https ca-certificates wget gnupg
 ```
 
 ## 2: Add Ripple's package-signing GPG key to your list of trusted keys:
 ```
-wget -q -O - "https://repos.ripple.com/repos/api/gpg/key/public" | \
+$ wget -q -O - "https://repos.ripple.com/repos/api/gpg/key/public" | \
   sudo apt-key add -
 ```
 
 ## 3: Check the fingerprint of the newly-added key:
 ```
-apt-key finger
+$ apt-key finger
 
 The output should include an entry for Ripple such as the following:
 
