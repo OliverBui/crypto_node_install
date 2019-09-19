@@ -25,7 +25,7 @@ $ wget -q -O - "https://repos.ripple.com/repos/api/gpg/key/public" | \
 ## 3: Check the fingerprint of the newly-added key:
 ```
 $ apt-key finger
-```
+
 The output should include an entry for Ripple such as the following:
 
 pub   rsa3072 2019-02-14 [SC] [expires: 2021-02-13]
@@ -33,6 +33,7 @@ pub   rsa3072 2019-02-14 [SC] [expires: 2021-02-13]
 uid           [ unknown] TechOps Team at Ripple <techops+rippled@ripple.com>
 sub   rsa3072 2019-02-14 [E] [expires: 2021-02-13]
 In particular, make sure that the fingerprint matches. (In the above example, the fingerprint is on the second line, starting with C001.)
+```
 
 ## 4: Add the appropriate Ripple repository for your operating system version:
 ```
