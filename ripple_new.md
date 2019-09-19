@@ -36,32 +36,33 @@ In particular, make sure that the fingerprint matches. (In the above example, th
 ```
 
 ## 4: Add the appropriate Ripple repository for your operating system version:
-
+```
 $ echo "deb https://repos.ripple.com/repos/rippled-deb bionic stable" | \
     sudo tee -a /etc/apt/sources.list.d/ripple.list
+```
     
 ## 5: Fetch the Ripple repository.
+```
 $ sudo apt -y update
+```
 
 
 ## 6: Install the rippled software package:
-
+```
 $ sudo apt -y install rippled
+```
 
 ## 7: Check the status of the rippled service:
-
+```
 $ systemctl status rippled.service
-The rippled service should start automatically. If not, you can start it manually:
-
 $ sudo systemctl start rippled.service
-To configure it to start automatically on boot:
-
 $ sudo systemctl enable rippled.service
+```
 
-## check the rippled status:
+## 8: Check the rippled status:
 #### service status:
-```commandline
-sudo systemctl status rippled
+```
+$ sudo systemctl status rippled
 ===============
 ● rippled.service - Ripple Daemon
    Loaded: loaded (/usr/lib/systemd/system/rippled.service; enabled; vendor preset: enabled)
@@ -76,8 +77,8 @@ sudo systemctl status rippled
 
 ```
 #### service ports:
-```commandline
-sudo netstat -ntpl
+```
+$ sudo netstat -ntpl
 ===============
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
