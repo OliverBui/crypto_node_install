@@ -9,7 +9,7 @@ CPU: 2Cores
 
 Offical Docs: https://xrpl.org/install-rippled-on-ubuntu.html#main_content_body
 
-## 1: install utils + update system
+## 1: Install utils + update system
 ```
 $ sudo apt-get update -y
 $ sudo apt-get upgrade -y
@@ -25,7 +25,7 @@ $ wget -q -O - "https://repos.ripple.com/repos/api/gpg/key/public" | \
 ## 3: Check the fingerprint of the newly-added key:
 ```
 $ apt-key finger
-
+```
 The output should include an entry for Ripple such as the following:
 
 pub   rsa3072 2019-02-14 [SC] [expires: 2021-02-13]
@@ -33,7 +33,6 @@ pub   rsa3072 2019-02-14 [SC] [expires: 2021-02-13]
 uid           [ unknown] TechOps Team at Ripple <techops+rippled@ripple.com>
 sub   rsa3072 2019-02-14 [E] [expires: 2021-02-13]
 In particular, make sure that the fingerprint matches. (In the above example, the fingerprint is on the second line, starting with C001.)
-```
 
 ## 4: Add the appropriate Ripple repository for your operating system version:
 ```
@@ -45,7 +44,6 @@ $ echo "deb https://repos.ripple.com/repos/rippled-deb bionic stable" | \
 ```
 $ sudo apt -y update
 ```
-
 
 ## 6: Install the rippled software package:
 ```
@@ -63,6 +61,7 @@ $ sudo systemctl enable rippled.service
 #### Service status:
 ```
 $ sudo systemctl status rippled
+```
 ===============
 ● rippled.service - Ripple Daemon
    Loaded: loaded (/usr/lib/systemd/system/rippled.service; enabled; vendor preset: enabled)
@@ -75,10 +74,10 @@ $ sudo systemctl status rippled
            ├─ 909 /opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
            └─1155 /opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
 
-```
 #### Service ports:
 ```
 $ sudo netstat -ntpl
+```
 ===============
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
@@ -86,6 +85,4 @@ tcp        0      0 127.0.0.1:6006          0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1003/sshd           
 tcp        0      0 0.0.0.0:51235           0.0.0.0:*               LISTEN      1155/rippled        
 tcp        0      0 127.0.0.1:5005          0.0.0.0:*               LISTEN      1155/rippled        
-tcp6       0      0 :::22                   :::*                    LISTEN      1003/sshd     
-
-```
+tcp6       0      0 :::22                   :::*                    LISTEN      1003/sshd
