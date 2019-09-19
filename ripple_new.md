@@ -60,7 +60,7 @@ $ sudo systemctl enable rippled.service
 ```
 
 ## 8: Check the rippled status:
-#### service status:
+#### Service status:
 ```
 $ sudo systemctl status rippled
 ===============
@@ -76,7 +76,7 @@ $ sudo systemctl status rippled
            └─1155 /opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
 
 ```
-#### service ports:
+#### Service ports:
 ```
 $ sudo netstat -ntpl
 ===============
