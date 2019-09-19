@@ -61,7 +61,7 @@ $ sudo systemctl enable rippled.service
 #### Service status:
 ```
 $ sudo systemctl status rippled
-```
+
 ===============
 ● rippled.service - Ripple Daemon
    Loaded: loaded (/usr/lib/systemd/system/rippled.service; enabled; vendor preset: enabled)
@@ -73,11 +73,12 @@ $ sudo systemctl status rippled
    CGroup: /system.slice/rippled.service
            ├─ 909 /opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
            └─1155 /opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
+```
 
 #### Service ports:
 ```
 $ sudo netstat -ntpl
-```
+
 ===============
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
@@ -86,3 +87,4 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:51235           0.0.0.0:*               LISTEN      1155/rippled        
 tcp        0      0 127.0.0.1:5005          0.0.0.0:*               LISTEN      1155/rippled        
 tcp6       0      0 :::22                   :::*                    LISTEN      1003/sshd
+```
